@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@headlessui/react': 1.7.17
+  '@types/js-cookie': ^3.0.5
   '@types/react': 18.2.15
   '@types/react-dom': 18.2.7
   '@typescript-eslint/eslint-plugin': 6.0.0
@@ -12,6 +13,7 @@ specifiers:
   eslint-plugin-react: 7.33.2
   eslint-plugin-react-hooks: 4.6.0
   eslint-plugin-react-refresh: 0.4.3
+  js-cookie: ^3.0.5
   postcss: 8.4.31
   react: 18.2.0
   react-dom: 18.2.0
@@ -20,10 +22,11 @@ specifiers:
   tailwindcss: 3.3.5
   typescript: 5.0.2
   vite: 4.4.5
-  zustand: ^4.4.5
+  zustand: 4.4.5
 
 dependencies:
   '@headlessui/react': 1.7.17_biqbaboplfbrettd7655fr4n2y
+  js-cookie: 3.0.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-query: 3.39.3_biqbaboplfbrettd7655fr4n2y
@@ -31,6 +34,7 @@ dependencies:
   zustand: 4.4.5_tznpbkknyqq5lcv5sgrl332jvu
 
 devDependencies:
+  '@types/js-cookie': 3.0.5
   '@types/react': 18.2.15
   '@types/react-dom': 18.2.7
   '@typescript-eslint/eslint-plugin': 6.0.0_uziv5uyc2tr4ymku634i2bei5e
@@ -509,6 +513,10 @@ packages:
 
   /@swc/types/0.1.5:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
+    dev: true
+
+  /@types/js-cookie/3.0.5:
+    resolution: {integrity: sha512-dtLshqoiGRDHbHueIT9sjkd2F4tW1qPSX2xKAQK8p1e6pM+Z913GM1shv7dOqqasEMYbC5zEaClJomQe8OtQLA==}
     dev: true
 
   /@types/json-schema/7.0.14:
@@ -1766,6 +1774,11 @@ packages:
     resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
     hasBin: true
     dev: true
+
+  /js-cookie/3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
+    dev: false
 
   /js-sha3/0.8.0:
     resolution: {integrity: sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==}
