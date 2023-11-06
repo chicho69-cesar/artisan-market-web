@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Layout from './components/Layout'
-import LandingPage from './components/LandingPage'
-import { RecoverPasswordScreen, SignInScreen, SignUpScreen } from '@/modules/auth/screens'
-import SellerRoute from './components/SellerRoute'
+import { EditProfileScreen, FollowersScreen, FollowingsScreen, ProfileScreen, UserScreen } from '@/modules/accounts/screens'
 import { CreateProductScreen, DashboardScreen, EditProductScreen, MyProductsScreen, OrdersScreen } from '@/modules/admin/screens'
-import { AddressScreen, CheckoutScreen, OrderScreen, OrdersHistoryScreen } from '@/modules/orders/screens'
-import ProtectedRoute from './components/ProtectedRoute'
-import { AddReviewScreen, DetailsScreen, HomeScreen, ReviewsScreen, SearchScreen } from '@/modules/products/screens'
+import { RecoverPasswordScreen, SignInScreen, SignUpScreen } from '@/modules/auth/screens'
 import { CartScreen } from '@/modules/cart/screens'
 import { ChatScreen, ChatsScreen } from '@/modules/chats/screens'
-import { EditProfileScreen, FollowersScreen, FollowingsScreen, ProfileScreen } from '@/modules/accounts/screens'
+import { AddressScreen, CheckoutScreen, OrderScreen, OrdersHistoryScreen } from '@/modules/orders/screens'
+import { AddReviewScreen, DetailsScreen, HomeScreen, ReviewsScreen, SearchScreen } from '@/modules/products/screens'
 import AlreadyAuthRoute from './components/AlreadyAuthRoute'
+import LandingPage from './components/LandingPage'
+import Layout from './components/Layout'
+import ProtectedRoute from './components/ProtectedRoute'
+import SellerRoute from './components/SellerRoute'
 
 export default function Router() {
   return (
@@ -171,6 +171,15 @@ export default function Router() {
             element={
               <ProtectedRoute>
                 <ProfileScreen />
+              </ProtectedRoute>
+            }
+          />
+          
+          <Route
+            path='/user-profile/:id'
+            element={
+              <ProtectedRoute>
+                <UserScreen />
               </ProtectedRoute>
             }
           />
