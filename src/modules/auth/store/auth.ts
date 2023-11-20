@@ -1,44 +1,42 @@
 import { create } from 'zustand'
 
-import { Role, type User, type UserLogged } from '../types/auth.d'
-import { getSession } from '../utils/session'
+import type { User } from '@/modules/shared/interfaces'
+import type { UserLogged } from '../types/auth.d'
 
 interface StateActions {
   authenticate: (user: User, token: string) => void
+  updateAuthInfo: (user: User) => void
+  logout: () => void
 }
 
 type State = StateActions & UserLogged
 
 export const useAuth = create<State>((set) => {
   return {
-    isLoggedIn: true,
-    user: {
-      name: 'Cesar',
-      lastname: 'Villalobos Olmos',
-      email: 'cesarvillalobosolmos.01@gmail.com',
-      picture: 'https://picsum.photos/200',
-      biography: 'Deserunt excepteur sunt enim esse veniam do.',
-      role: Role.Seller
-    },
-    token: '12345',
+    isLoggedIn: false,
+    user: null,
+    token: null,
     authenticate: (user: User, token: string) => {
-      set(() => ({
+      set((state) => ({
+        ...state,
         isLoggedIn: true,
         user,
         token
       }))
     },
-    init: () => {
-      set((state) => {
-        getSession()
-          .then((session) => {
-            state.isLoggedIn = !(session == null)
-            state.user = (session != null) ? session.user : null
-            state.token = (session != null) ? session.token : null
-          })
-
-        return state
-      })
+    updateAuthInfo: (user: User) => {
+      set((state) => ({
+        ...state,
+        user
+      }))
+    },
+    logout: () => {
+      set((state) => ({
+        ...state,
+        isLoggedIn: false,
+        user: null,
+        token: null
+      }))
     }
   }
 })
