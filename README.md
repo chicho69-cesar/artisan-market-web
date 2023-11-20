@@ -1,27 +1,51 @@
-# React + TypeScript + Vite
+# Artisan Market
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![logo](public/logo.png)
 
-Currently, two official plugins are available:
+**Artisan Market Front-End** es un proyecto desarrollado con React y TypeScript, diseñado para impulsar una tienda en línea especializada en la venta de productos artesanales. Este repositorio alberga el código fuente del front-end mobile de la aplicación, proporcionando las capacidades esenciales para gestionar productos, usuarios, órdenes y más en la plataforma, con un diseño increíble basado en un diseño realizado por nosotros mismos en Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades Clave
 
-## Expanding the ESLint configuration
+- **Gestión de Productos**: Administra una amplia variedad de productos artesanales, incluyendo detalles como nombre, descripción, precio y cantidad en stock.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Control de Usuarios**: Permite a los vendedores y administradores registrarse, autenticarse y gestionar sus cuentas.
 
-- Configure the top-level `parserOptions` property like this:
+- **Órdenes y Compras**: Facilita la creación, seguimiento y finalización de órdenes de compra, incluyendo estados como "pagado", "pendiente" y "cancelado".
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+- **Revisiones y Calificaciones**: Los clientes pueden dejar revisiones y calificaciones para los productos, proporcionando retroalimentación valiosa.
+
+- **Estadísticas de Venta**: Ofrece estadísticas detalladas sobre las ventas, incluyendo el número de órdenes pagadas, pendientes, canceladas y más.
+
+## Configuración del Proyecto 🚧
+
+**Clona este repositorio:**
+
+```bash
+git clone https://github.com/chicho69-cesar/artisan-market-web.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Navega al directorio del proyecto:**
+
+```bash
+cd artisan-market-web
+```
+
+**Instala las dependencias:**
+
+```bash
+npm install
+ó
+pnpm install
+ó
+yarn
+```
+
+## Iniciar la Aplicación 🚀
+
+```bash
+npm run dev
+ó
+yarn dev
+ó
+pnpm dev
+```
