@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom'
 
 import { useAuth } from '@/modules/auth/store/auth'
-import { Role } from '@/modules/auth/types/auth.d'
+import { Roles } from '@/modules/shared/interfaces'
 
 interface Props {
   children: JSX.Element | JSX.Element[]
@@ -10,7 +10,7 @@ interface Props {
 export default function SellerRoute({ children }: Props) {
   const auth = useAuth((state) => state)
 
-  if (auth.isLoggedIn && auth.user?.role === Role.Seller) {
+  if (auth.isLoggedIn && auth.user?.role_id === Roles.seller) {
     return children
   } else {
     return <Navigate replace to='/home' />
