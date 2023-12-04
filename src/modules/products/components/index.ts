@@ -1,0 +1,7 @@
+export { default as Categories } from './Categories'
+export { default as ImagesCarousel } from './ImagesCarousel'
+export { default as Product } from './Product'
+export { default as Products } from './Products'
+export { default as Review } from './Review'
+export { default as Reviews } from './Reviews'
+export { default as ShareProduct } from './ShareProduct'
