@@ -1,8 +1,11 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { EditProfileScreen, FollowersScreen, FollowingsScreen, ProfileScreen, UserScreen } from '@/modules/accounts/screens'
-import { CreateProductScreen, DashboardScreen, EditProductScreen, MyProductsScreen, OrdersScreen } from '@/modules/admin/screens'
+import { AdminOrderScreen, CreateProductScreen, DashboardScreen, EditProductScreen, MyProductsScreen, OrdersScreen } from '@/modules/admin/screens'
 import { RecoverPasswordScreen, SignInScreen, SignUpScreen } from '@/modules/auth/screens'
+import { useAuth } from '@/modules/auth/store'
+import { getSession } from '@/modules/auth/utils/session'
 import { CartScreen } from '@/modules/cart/screens'
 import { ChatScreen, ChatsScreen } from '@/modules/chats/screens'
 import { AddressScreen, CheckoutScreen, OrderScreen, OrdersHistoryScreen } from '@/modules/orders/screens'
@@ -12,8 +15,23 @@ import LandingPage from './components/LandingPage'
 import Layout from './components/Layout'
 import ProtectedRoute from './components/ProtectedRoute'
 import SellerRoute from './components/SellerRoute'
+import NotFound from './components/NotFound'
 
 export default function Router() {
+  const auth = useAuth((state) => state)
+
+  useEffect(() => {
+    const getSessionFromStore = async () => {
+      const userLogged = await getSession()
+
+      if (userLogged != null) {
+        auth.authenticate(userLogged.user!, userLogged.token!)
+      }
+    }
+
+    getSessionFromStore()
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>
@@ -95,7 +113,7 @@ export default function Router() {
           />
 
           <Route
-            path='/edit-product/:product'
+            path='/edit-products/:product'
             element={
               <ProtectedRoute>
                 <EditProductScreen />
@@ -131,7 +149,7 @@ export default function Router() {
           />
 
           <Route
-            path='/checkout/:order'
+            path='/checkout'
             element={
               <ProtectedRoute>
                 <CheckoutScreen />
@@ -145,6 +163,15 @@ export default function Router() {
               <ProtectedRoute>
                 <OrderScreen />
               </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path='/admin-order/:order'
+            element={
+              <SellerRoute>
+                <AdminOrderScreen />
+              </SellerRoute>
             }
           />
 
@@ -194,7 +221,7 @@ export default function Router() {
           />
 
           <Route
-            path='/followers'
+            path='/followers/:id'
             element={
               <ProtectedRoute>
                 <FollowersScreen />
@@ -203,7 +230,7 @@ export default function Router() {
           />
 
           <Route
-            path='/following'
+            path='/following/:id'
             element={
               <ProtectedRoute>
                 <FollowingsScreen />
@@ -237,6 +264,8 @@ export default function Router() {
               </SellerRoute>
             }
           />
+
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
