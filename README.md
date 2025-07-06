@@ -1,6 +1,8 @@
 # Artisan Market
 
-![logo](public/logo.png)
+<div style="width: 100%; display: flex; justify-content: center; margin-block: 1rem;">
+  <img src="./public/logo.png" width="100" height="100" />
+</div>
 
 **Artisan Market Front-End** es un proyecto desarrollado con React y TypeScript, diseñado para impulsar una tienda en línea especializada en la venta de productos artesanales. Este repositorio alberga el código fuente del front-end mobile de la aplicación, proporcionando las capacidades esenciales para gestionar productos, usuarios, órdenes y más en la plataforma, con un diseño increíble basado en un diseño realizado por nosotros mismos en Figma.
 
