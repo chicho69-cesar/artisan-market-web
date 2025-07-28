@@ -1,5 +1,5 @@
 interface Props {
-  children: JSX.Element | JSX.Element[] | React.ReactNode
+  children: React.ReactNode | React.ReactNode[] | React.ReactNode
 }
 
 export default function AppContainer({ children }: Props) {

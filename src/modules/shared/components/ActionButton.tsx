@@ -4,7 +4,7 @@ import { colors } from '../theme'
 interface Props {
   bgColor?: string
   color?: string
-  children: JSX.Element | JSX.Element[] | React.ReactNode
+  children: React.ReactNode | React.ReactNode[] | React.ReactNode
   onPress: () => void
 }
 

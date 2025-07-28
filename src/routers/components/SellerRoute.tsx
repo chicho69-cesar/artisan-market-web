@@ -4,7 +4,7 @@ import { useAuth } from '@/modules/auth/store/auth'
 import { Roles } from '@/modules/shared/interfaces'
 
 interface Props {
-  children: JSX.Element | JSX.Element[]
+  children: React.ReactNode | React.ReactNode[]
 }
 
 export default function SellerRoute({ children }: Props) {
