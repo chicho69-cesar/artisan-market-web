@@ -12,6 +12,7 @@ export function useNavigate() {
   }
 
   const navigateBetweenRoutes = (router: string, route: string, params: any) => {
+    console.log('Navigating between routes:', router, route, params)
     navigator(`${route}/${params}`)
   }
 
