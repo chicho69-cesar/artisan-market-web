@@ -11,6 +11,6 @@ export default function AlreadyAuthRoute({ children }: Props) {
   if (auth.isLoggedIn) {
     return <Navigate replace to='/home' />
   } else {
-    return children
+    return <>{children}</>
   }
 }

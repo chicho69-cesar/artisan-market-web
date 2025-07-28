@@ -11,7 +11,7 @@ export default function SellerRoute({ children }: Props) {
   const auth = useAuth((state) => state)
 
   if (auth.isLoggedIn && auth.user?.role_id === Roles.seller) {
-    return children
+    return <>{children}</>
   } else {
     return <Navigate replace to='/home' />
   }

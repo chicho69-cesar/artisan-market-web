@@ -9,7 +9,7 @@ export default function ProtectedRoute({ children }: Props) {
   const auth = useAuth((state) => state)
 
   if (auth.isLoggedIn) {
-    return children
+    return <>{children}</>
   } else {
     return <Navigate replace to='/sign-in' />
   }
